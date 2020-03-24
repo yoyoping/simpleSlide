@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #conSlide {
+            width: 1000px;
+            height: 550px;
+            overflow: hidden;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #conSlide .loopUl li {
+            height: 100%;
+            float: left;
+            list-style: none;
+            transition: all 1.3s;
+        }
+
+        #conSlide .loopUl img {
+            height: 100%;
+            width: 100%;
+        }
+
+        #conSlide .loopUl {
+            position: relative;
+            height: 100%;
+        }
+
+        #conSlide .prevnext {
+            opacity: 0;
+            transition: all .5s;
+        }
+
+        #conSlide:hover .prevnext {
+            opacity: 1;
+            transition: all .5s;
+        }
+
+        #conSlide .prevnext a {
+            display: block;
+            width: 70px;
+            height: 70%;
+            background-color: rgba(0, 0, 0, 0.418);
+            position: absolute;
+            top: 15%;
+        }
+
+        #conSlide .prevnext img {
+            width: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        #conSlide .prev {
+            left: 0;
+        }
+
+        #conSlide .next {
+            right: 0;
+        }
+
+        #conSlide .slidePage {
+            text-align: center;
+            height: 12px;
+            position: absolute;
+            left: 0;
+            bottom: 20px;
+            width: 100%;
+        }
+
+        #conSlide .slidePage a {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            box-sizing: border-box;
+            margin: 0 5px;
+        }
+
+        #conSlide .slidePage a.on {
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="conSlide">
+        <!-- 滚动主体内容 -->
+        <ul class="loopUl">
+            <li class="artive"><img src="./images/1.jpg" alt=""></li>
+            <li class="artive"><img src="./images/2.jpg" alt=""></li>
+            <li class="artive"><img src="./images/3.jpg" alt=""></li>
+            <li class="artive"><img src="./images/4.jpg" alt=""></li>
+            <li class="artive"><img src="./images/5.jpg" alt=""></li>
+        </ul>
+        <!-- 上下翻页 -->
+        <p class="prevnext">
+            <a href="javascript:;" class="prev">
+                <img src="./images/slideLeft.png" alt="">
+            </a>
+            <a href="javascript:;" class="next">
+                <img src="./images/slideRight.png" alt="">
+            </a>
+        </p>
+        <!-- 分页 -->
+        <p class="slidePage">
+            <a href="javascript:;" class="on" data-index="1"></a>
+            <a href="javascript:;" data-index="2"></a>
+            <a href="javascript:;" data-index="3"></a>
+            <a href="javascript:;" data-index="4"></a>
+            <a href="javascript:;" data-index="5"></a>
+        </p>
+    </div>
+    <script>
+        var slideParam = {
+            time: 3000, // 轮播间隔时间
+            mouseStop: true, // 鼠标移入是否停止滚动
+            loop: true // 开始和最后一张是否循环
+        }
+    </script>
+    <script src="./js/simpleSlide.js"></script>
+</body>
+
+</html>
